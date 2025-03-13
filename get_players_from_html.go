@@ -24,6 +24,8 @@ func getPlayersFromHTML(htmlBody string) ([]player, error) {
 				if a.Key == "class" && strings.Contains(a.Val, "ranking_set") {
 					p := player{}
 
+					p.lodestone = n.Attr[1].Val
+
 					for n2 := range n.Descendants() {
 						if n2.Type == html.ElementNode && n2.DataAtom == atom.Div {
 							for _, a2 := range n2.Attr {

@@ -6,12 +6,13 @@ import (
 )
 
 type player struct {
-	rank   int
-	icon   string
-	name   string
-	world  string
-	points string
-	wins   string
+	rank      int
+	icon      string
+	lodestone string
+	name      string
+	world     string
+	points    string
+	wins      string
 }
 
 type ranking struct {
@@ -38,6 +39,7 @@ func (cfg *config) printReport(region string) {
 		fmt.Println(
 			player.rank,
 			// player.icon,
+			// player.lodestone,
 			player.name,
 			player.world,
 			player.points,
